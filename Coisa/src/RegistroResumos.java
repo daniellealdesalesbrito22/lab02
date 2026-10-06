@@ -1,21 +1,18 @@
 public class RegistroResumos {
-    String[] temas;
+    String[] titulos;
     String[] resumos;
 
     public RegistroResumos(int numeroDeResumos) {
-        this.temas = new String[numeroDeResumos];
         this.resumos = new String[numeroDeResumos];
+        this.titulos = new String[numeroDeResumos];
     }
 
     public void adiciona(String tema, String conteudo) {
-        for (int i = 0; i < temas.length; i++) {
-            if (temas[i] == null) {
-                temas[i] = tema;
-            }
-        }
         for (int i = 0; i < resumos.length; i++) {
             if (resumos[i] == null) {
-                resumos[i] = conteudo;
+                resumos[i] = tema + ": " + conteudo;
+                titulos[i] = tema;
+                break;
             }
         }
     }
@@ -26,8 +23,8 @@ public class RegistroResumos {
 
     public int conta() {
         int somaResumos = 0;
-        for (int i = 0; i < resumos.length; i++) {
-            if (resumos[i] != null) {
+        for (int i = 0; i < titulos.length; i++) {
+            if (titulos[i] != null) {
                 somaResumos += 1;
             }
         }
@@ -35,17 +32,25 @@ public class RegistroResumos {
     }
 
     public String imprimeResumos() {
-        for (int i = 0; i < resumos.length; i++) {
-            if (resumos[i] != null) {
-                System.out.println(temas[i] + ": " + resumos[i]);
+        String temas = "";
+        int soma = 0;
+        if (titulos[0] != null){
+            soma = 1;
+            temas += "- " + titulos[0];
+            for (int i = 1; i < titulos.length; i++) {
+                if (titulos[i] != null) {
+                    temas += " | " + titulos[i];
+                    soma += 1;
+                }
             }
         }
-        return "";
+        System.out.println("- " + soma + " resumo(s) cadastrado(s)");
+        return temas;
     }
 
     public boolean temResumo(String nome) {
-        for (int i = 0; i < resumos.length; i++) {
-            if (resumos[i] == nome) {
+        for (int i = 0; i < titulos.length; i++) {
+            if (titulos[i] == nome) {
                 return true;
             }
         }

@@ -1,7 +1,9 @@
+import java.util.Arrays;
+
 public class Disciplina {
     String nomeDisciplina;
     int horasEstudo;
-    double[] notas;
+    double[] notas = new double[4];
 
     public Disciplina(String nome) {
         this.nomeDisciplina = nome;
@@ -13,7 +15,7 @@ public class Disciplina {
     }
 
     public void cadastraNota(int nota, double valorNota) {
-        notas[nota] = valorNota;
+        this.notas[nota-1] = valorNota;
     }
 
     private double media(double[] notas) {
@@ -32,6 +34,6 @@ public class Disciplina {
     }
 
     public String toString() {
-        return this.nomeDisciplina + this.horasEstudo + media(this.notas) + notas;
+        return this.nomeDisciplina + " " + this.horasEstudo+ " " + media(this.notas) + " " + "[" + this.notas[0] + ", " + this.notas[1] + ", " + this.notas[2] + ", " + this.notas[3] + "]";
     }
 }

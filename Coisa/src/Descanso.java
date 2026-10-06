@@ -8,11 +8,11 @@ public class Descanso {
     }
 
     public void defineHorasDescanso(int horas) {
-        this.horasDescanso += horas;
+        this.horasDescanso = horas;
     }
 
     public void defineNumeroSemanas(int semanas) {
-        this.numeroSemanas += semanas;
+        this.numeroSemanas = semanas;
     }
 
     public String getStatusGeral() {
