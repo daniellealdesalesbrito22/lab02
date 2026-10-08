@@ -1,30 +1,27 @@
 public class RegistroResumos {
-    String[] titulos;
-    String[] resumos;
+    private Resumo[] resumos;
 
     public RegistroResumos(int numeroDeResumos) {
-        this.resumos = new String[numeroDeResumos];
-        this.titulos = new String[numeroDeResumos];
+        this.resumos = new Resumo[numeroDeResumos];
     }
 
     public void adiciona(String tema, String conteudo) {
         for (int i = 0; i < resumos.length; i++) {
             if (resumos[i] == null) {
-                resumos[i] = tema + ": " + conteudo;
-                titulos[i] = tema;
+                resumos[i] = new Resumo(tema, conteudo);
                 break;
             }
         }
     }
 
-    public String[] pegaResumos() {
+    public Resumo[] pegaResumos() {
         return resumos;
     }
 
     public int conta() {
         int somaResumos = 0;
-        for (int i = 0; i < titulos.length; i++) {
-            if (titulos[i] != null) {
+        for (int i = 0; i < resumos.length; i++) {
+            if (resumos[i] != null) {
                 somaResumos += 1;
             }
         }
@@ -34,12 +31,12 @@ public class RegistroResumos {
     public String imprimeResumos() {
         String temas = "";
         int soma = 0;
-        if (titulos[0] != null){
+        if (resumos[0] != null){
             soma = 1;
-            temas += "- " + titulos[0];
-            for (int i = 1; i < titulos.length; i++) {
-                if (titulos[i] != null) {
-                    temas += " | " + titulos[i];
+            temas += "- " + resumos[0].getTema();
+            for (int i = 1; i < resumos.length; i++) {
+                if (resumos[i] != null) {
+                    temas += " | " + resumos[i].getTema();
                     soma += 1;
                 }
             }
@@ -48,12 +45,19 @@ public class RegistroResumos {
         return temas;
     }
 
-    public boolean temResumo(String nome) {
-        for (int i = 0; i < titulos.length; i++) {
-            if (titulos[i] == nome) {
+    public boolean temResumo(String tema) {
+        for (int i = 0; i < resumos.length; i++) {
+            if (resumos[i] != null && resumos[i].getTema().equals(tema)){
                 return true;
             }
         }
         return false;
     }
+
+    public String[] busca(String chaveDeBusca) {
+        for (Resumo resumo : resumos) {
+
+        }
+    }
 }
+

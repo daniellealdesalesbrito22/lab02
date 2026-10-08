@@ -1,6 +1,6 @@
 public class Descanso {
-    int horasDescanso;
-    int numeroSemanas;
+    private int horasDescanso;
+    private int numeroSemanas;
 
     public Descanso() {
         this.horasDescanso = 0;

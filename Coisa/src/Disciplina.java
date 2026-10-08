@@ -1,9 +1,9 @@
 import java.util.Arrays;
 
 public class Disciplina {
-    String nomeDisciplina;
-    int horasEstudo;
-    double[] notas = new double[4];
+    private String nomeDisciplina;
+    private int horasEstudo;
+    private double[] notas = new double[4];
 
     public Disciplina(String nome) {
         this.nomeDisciplina = nome;
@@ -33,7 +33,7 @@ public class Disciplina {
         return false;
     }
 
-    public String toString() {
+    public String toString() { // Poderia ter usado o toString horrivel lixo yuji >>>>>>>
         return this.nomeDisciplina + " " + this.horasEstudo+ " " + media(this.notas) + " " + "[" + this.notas[0] + ", " + this.notas[1] + ", " + this.notas[2] + ", " + this.notas[3] + "]";
     }
 }
