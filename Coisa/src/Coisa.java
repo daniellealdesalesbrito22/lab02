@@ -1,5 +1,5 @@
 public class Coisa {
-    public static void main(String[] args) { // esse código tá bom
+    public static void main(String[] args) {
         registrarDescanso();
         System.out.println("-----");
         registrarTempoOnline();
@@ -8,7 +8,7 @@ public class Coisa {
         System.out.println("-----");
         registrarResumos();
     }
-    public static void registrarDescanso() { // massa de mais
+    public static void registrarDescanso() {
         Descanso descanso = new Descanso();
         System.out.println(descanso.getStatusGeral());
         descanso.defineHorasDescanso(30);
@@ -21,7 +21,7 @@ public class Coisa {
         descanso.defineNumeroSemanas(1);
         System.out.println(descanso.getStatusGeral());
     }
-    private static void registrarTempoOnline() { // legal
+    private static void registrarTempoOnline() {
         RegistroTempoOnline tempoLP2 = new RegistroTempoOnline("LP2", 30);
         tempoLP2.adicionaTempoOnline(10);
         System.out.println(tempoLP2.atingiuMetaTempoOnline());
@@ -34,7 +34,7 @@ public class Coisa {
         RegistroTempoOnline tempoP2 = new RegistroTempoOnline("P2");
         System.out.println(tempoP2.toString());
     }
-    private static void controlarDisciplina() { // muito doido
+    private static void controlarDisciplina() {
         Disciplina prog2 = new Disciplina("PROGRAMACAO 2");
         prog2.cadastraHoras(4);
         prog2.cadastraNota(1, 5.0);
@@ -45,7 +45,7 @@ public class Coisa {
         System.out.println(prog2.aprovado());
         System.out.println(prog2.toString());
     }
-    private static void registrarResumos() { // massa geral tdd
+    private static void registrarResumos() {
         RegistroResumos meusResumos = new RegistroResumos(100);  // 100 resumos
 
         meusResumos.adiciona("Classes", "Classes definem um tipo e a base de código para criação de objetos.");
