@@ -72,4 +72,5 @@ public class RegistroTempoOnline {
     public String toString() {
         return this.nomeDisciplina + " " + this.tempoInvestidoOnline + "/" + tempoEsperado;
     }
+
 }

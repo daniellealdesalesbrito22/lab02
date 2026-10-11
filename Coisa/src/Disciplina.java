@@ -124,4 +124,5 @@ public class Disciplina {
     public String toString() {
         return this.nomeDisciplina + " " + this.horasEstudo + " " + media(this.notas, this.pesos) + " " + Arrays.toString(this.notas) + " " + Arrays.toString(this.pesos);
     }
+
 }
